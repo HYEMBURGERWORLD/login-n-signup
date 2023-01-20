@@ -21,8 +21,10 @@ function idCheck() {
   } else if (4 > ID_KEY.length || obj.id === ID_KEY) {
     if (4 > ID_KEY.length)
       idCheckSpan.innerText = "아이디는 4글자 이상으로 정해주세요.";
-    else if (obj.id === ID_KEY) idCheckSpan.innerText = "이미 있는 아이디예요";
-    idInput.value = "";
+    else if (obj.id === ID_KEY) {
+      idCheckSpan.innerText = "이미 있는 아이디예요";
+      idInput.value = "";
+    }
   }
 }
 
@@ -50,6 +52,8 @@ function pwLengthCheck() {
 
 // 회원가입 정보 localStorage에 저장
 function signUp(event) {
+  event.preventDefault();
+
   const nameInput = document.querySelector("#nameInput");
   const birthInput = document.querySelector("#birthInput");
 
@@ -65,7 +69,8 @@ function signUp(event) {
     obj.birth = birthInput.value;
 
     localStorage.setItem(idInput.value + "", JSON.stringify(obj));
-    window.location.assign("login.html");
+    alert("회원가입이 완료되었습니다!");
+    window.location.assign("index.html");
   }
 }
 

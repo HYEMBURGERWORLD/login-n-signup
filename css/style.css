@@ -1,0 +1,17 @@
+.hidden {
+  display: none;
+}
+
+/*sign up*/
+#signUpForm {
+  padding: 10px;
+}
+
+.sufInput {
+  padding: 10px 0;
+}
+
+.sufInput input {
+  width: 200px;
+  padding: 8px;
+}

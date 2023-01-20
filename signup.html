@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
   <title>회원가입</title>
 </head>
 <body>
@@ -11,28 +12,28 @@
   <h1>회원가입</h1>
   <form action="" id="signUpForm">
 
-    <div class="">
+    <div class="sufInput">
       <label for="idInput">아이디</label>
-      <input type="text" id="idInput" placeholder="4자이상 10자이하" maxlength="10" minlength="4" required />
+      <input type="text" id="idInput" placeholder="4자이상 10자이하" maxlength="10" minlength="4" autocomplete="off" required />
       <input type="button" id="checkBtn" value="중복확인" />
       <span id="idCheckSpan"></span>
     </div>
-    <div class="">
+    <div class="sufInput">
       <label for="pwInput">비밀번호</label>
-      <input type="text" id="pwInput" placeholder="6자이상 10자이하" maxlength="10" minlength="6" required />
+      <input type="password" id="pwInput" placeholder="6자이상 10자이하" maxlength="10" minlength="6" autocomplete="off" required />
       <span id="pwLengthSpan"></span>
     </div>
-    <div class="">
+    <div class="sufInput">
       <label for="pwCheckInput">비밀번호 확인</label>
-      <input type="text" id="pwCheckInput" placeholder="비밀번호를 똑같이 입력하세요!" maxlength="10" minlength="6" required />
+      <input type="password" id="pwCheckInput" placeholder="비밀번호를 똑같이 입력하세요!" maxlength="10" minlength="6" autocomplete="off" required />
       <span id="pwCheckSpan"></span>
     </div>
-    <div class="">
+    <div class="sufInput">
       <label for="nameInput">닉네임</label>
-      <input type="text" id="nameInput" placeholder="8자이하" maxlength="8" required />
+      <input type="text" id="nameInput" placeholder="8자이하" maxlength="8" autocomplete="off" required />
     </div>
-    <div class="">
-      <label for="birthinput">생일</label>
+    <div class="sufInput">
+      <label for="birthinput">생일(선택)</label>
       <input type="date" id="birthInput" min="1920-01-01" />
     </div>
 
