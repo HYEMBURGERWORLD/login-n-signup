@@ -8,20 +8,42 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1>로그인</h1>
   
-  <!--local storage를 이용해서 로그인/회원가입 기능 구현하기-->
-  <form action="" id="loginForm">
+  <div class="main">
 
-    <input type="text" placeholder="아이디" id="idInput" autocomplete="off" />
-    <input type="password" placeholder="비밀번호" id="pwInput" autocomplete="off" />
+    <div class="allBox">
 
-    <button id="loginBtn">로그인</button>
+      <!--greeting-->
+      <div class="box">
+        <h1>로그인</h1>
+      </div>
+  
+      <!--login form-->
+      <div class="box">
+        <form action="" id="loginForm">
+      
+          <div class="box">
+            <input type="text" placeholder="아이디" id="idInput" autocomplete="off" />
+          </div>
+          <div class="box">
+            <input type="password" placeholder="비밀번호" id="pwInput" autocomplete="off" />
+          </div>
+      
+          <div class="btnBox">
+            <button id="loginBtn">로그인</button>
+          </div>
     
-    <span>
-      <a href="signup.html">회원가입</a>
-    </span>
-  </form>
+          <div class="box">
+            <span>
+              <a href="signup.html">회원가입</a>
+            </span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
 
   <!--js load-->
   <script type="text/javascript" src="js/login.js"></script>

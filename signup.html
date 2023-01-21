@@ -9,36 +9,43 @@
 </head>
 <body>
 
-  <h1>회원가입</h1>
-  <form action="" id="signUpForm">
+  <div class="main">
+    <div class="allBox">
 
-    <div class="sufInput">
-      <label for="idInput">아이디</label>
-      <input type="text" id="idInput" placeholder="4자이상 10자이하" maxlength="10" minlength="4" autocomplete="off" required />
-      <input type="button" id="checkBtn" value="중복확인" />
-      <span id="idCheckSpan"></span>
-    </div>
-    <div class="sufInput">
-      <label for="pwInput">비밀번호</label>
-      <input type="password" id="pwInput" placeholder="6자이상 10자이하" maxlength="10" minlength="6" autocomplete="off" required />
-      <span id="pwLengthSpan"></span>
-    </div>
-    <div class="sufInput">
-      <label for="pwCheckInput">비밀번호 확인</label>
-      <input type="password" id="pwCheckInput" placeholder="비밀번호를 똑같이 입력하세요!" maxlength="10" minlength="6" autocomplete="off" required />
-      <span id="pwCheckSpan"></span>
-    </div>
-    <div class="sufInput">
-      <label for="nameInput">닉네임</label>
-      <input type="text" id="nameInput" placeholder="8자이하" maxlength="8" autocomplete="off" required />
-    </div>
-    <div class="sufInput">
-      <label for="birthinput">생일(선택)</label>
-      <input type="date" id="birthInput" min="1920-01-01" />
-    </div>
+      <h1>회원가입</h1>
+  
+      <form action="" id="signUpForm">
+        <div class="sufInput">
+          <label for="idInput">아이디</label>
+          <input type="text" id="idInput" placeholder="4자이상 10자이하" maxlength="10" minlength="4" autocomplete="off" required />
+          <span id="idCheckSpan"></span>
+        </div>
+        <div class="sufInput">
+          <label for="pwInput">비밀번호</label>
+          <input type="password" id="pwInput" placeholder="6자이상 10자이하" maxlength="10" minlength="6" autocomplete="off" required />
+          <span id="pwLengthSpan"></span>
+        </div>
+        <div class="sufInput">
+          <label for="pwCheckInput">비밀번호 확인</label>
+          <input type="password" id="pwCheckInput" placeholder="비밀번호를 똑같이 입력하세요!" maxlength="10" minlength="6" autocomplete="off" required />
+          <span id="pwCheckSpan"></span>
+        </div>
+        <div class="sufInput plusMargin">
+          <label for="nameInput">닉네임</label>
+          <input type="text" id="nameInput" placeholder="8자이하" maxlength="8" autocomplete="off" required />
+        </div>
+        <div class="sufInput plusMargin">
+          <label for="birthinput">생일(선택)</label>
+          <input type="date" id="birthInput" min="1920-01-01" />
+        </div>
+    
+        <div class="btnBox">
+          <button id="signUpBtn">가입</button>
+        </div>
+      </form>
 
-    <input type="submit" id="signUpBtn" value="가입" />
-  </form>
+    </div>
+  </div>
 
   <!--js load-->
   <script type="text/javascript" src="js/signup.js"></script>
@@ -49,7 +56,7 @@
     const maxDay = `${today.getFullYear()}-${""+today.getMonth()+1}-${today.getDate()}`;
     birth.setAttribute("max", maxDay);
     console.log(maxDay);
+    
   </script>
-  
 </body>
 </html>

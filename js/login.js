@@ -12,8 +12,9 @@ function login(event) {
 
   event.preventDefault();
 
-  const idValue = JSON.parse(localStorage.getItem(idInput.value + ""));
+  const idValue = JSON.parse(localStorage.getItem("user"));
   if (idValue != null && idValue.id === idInput.value) {
+    console.log(idValue.id);
     if (idValue.pw === pwInput.value) {
       // 로그인 성공하면 html 변신~
       const mainString = document.querySelector("h1");
@@ -23,7 +24,7 @@ function login(event) {
       alert("비밀번호를 확인하세요");
       pwInput.value = "";
     }
-  } else if (idValue == null) {
+  } else if (idValue.id !== idInput.value) {
     alert("없는 아이디입니다.");
     idInput.value = "";
     pwInput.value = "";

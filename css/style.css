@@ -2,16 +2,87 @@
   display: none;
 }
 
-/*sign up*/
-#signUpForm {
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgb(251,230,151);
+  background: radial-gradient(circle, rgb(255, 241, 191) 0%, rgb(156, 209, 105) 100%);
+}
+
+.main input {
+  padding: 8px;
+  margin: 5px 0;
+  
+  width: 200px;
+  height: 20px;
+}
+
+.main input:focus {
+  outline: 2px solid rgb(156, 209, 105);
+}
+
+.main h1 {
+  margin: 20px 0;
+}
+
+.main a {
+  color: rgb(106, 106, 106);
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+.main a:hover {
+  text-decoration: underline;
+}
+
+.allBox {
+  background-color: rgba(255, 251, 210, 0.8);
+  border: 1px solid rgb(255, 251, 210);
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px rgb(255, 251, 210);
+  padding: 100px 80px;
+}
+
+.btnBox {
+  margin: 25px 0 15px 0;
+}
+
+.btnBox button {
+  padding: 10px 40px;
+  background-color: rgba(156, 209, 105, .5);
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.btnBox button:hover {
+  background-color: rgba(156, 209, 105, 1);
+}
+
+label {
+  display: block;
+  padding: 5px 0;
+  margin-top: 5px;
+  text-align: left;
+  font-size: 11pt;
+}
+
+.sufInput span {
+  display: block;
+  font-size: 10pt;
+  color: rgb(175, 37, 37);
   padding: 10px;
 }
 
-.sufInput {
-  padding: 10px 0;
-}
-
-.sufInput input {
-  width: 200px;
-  padding: 8px;
+.plusMargin {
+  margin-bottom: 20px;
 }

@@ -1,6 +1,5 @@
 const signUpForm = document.querySelector("#signUpForm");
 const idInput = document.querySelector("#idInput");
-const idCheckBtn = document.querySelector("#checkBtn");
 const idCheckSpan = document.querySelector("#idCheckSpan");
 
 const pwInput = document.querySelector("#pwInput");
@@ -13,23 +12,29 @@ const PWOK_KEY = "비밀번호가 확인되었습니다!";
 // 아이디 중복체크
 function idCheck() {
   const ID_KEY = idInput.value;
-  const getId = localStorage.getItem(ID_KEY + "");
+  const getId = localStorage.getItem("user");
   const obj = JSON.parse(getId);
+  const engReg = /^[a-zA-Z0-9]/;
+  const etcReg = /[^a-zA-Z0-9]/gi;
 
-  if (3 < ID_KEY.length && getId == null) {
+  if (
+    3 < ID_KEY.length &&
+    obj.id !== ID_KEY &&
+    engReg.test(ID_KEY) &&
+    !etcReg.test(ID_KEY)
+  ) {
     idCheckSpan.innerText = IDOK_KEY;
-  } else if (4 > ID_KEY.length || obj.id === ID_KEY) {
-    if (4 > ID_KEY.length)
-      idCheckSpan.innerText = "아이디는 4글자 이상으로 정해주세요.";
-    else if (obj.id === ID_KEY) {
-      idCheckSpan.innerText = "이미 있는 아이디예요";
-      idInput.value = "";
-    }
+  } else if (!engReg.test(ID_KEY) || etcReg.test(ID_KEY)) {
+    idCheckSpan.innerText = "영어와 숫자만 사용할 수 있어요.";
+  } else if (ID_KEY.length < 4) {
+    idCheckSpan.innerText = "아이디는 4글자 이상으로 정해주세요.";
+  } else if (obj.id === ID_KEY) {
+    idCheckSpan.innerText = "이미 있는 아이디예요";
   }
 }
 
 // 비밀번호 중복체크
-function pwCheck(event) {
+function pwCheck() {
   if (pwInput.value === pwCheckInput.value) {
     pwCheckSpan.innerText = PWOK_KEY;
   } else pwCheckSpan.innerText = "비밀번호를 확인하세요";
@@ -68,15 +73,18 @@ function signUp(event) {
     obj.name = nameInput.value;
     obj.birth = birthInput.value;
 
-    localStorage.setItem(idInput.value + "", JSON.stringify(obj));
+    localStorage.setItem("user", JSON.stringify(obj));
     alert("회원가입이 완료되었습니다!");
     window.location.assign("index.html");
   }
 }
 
 // Event Listner
-idCheckBtn.addEventListener("click", idCheck); // id중복확인
+idInput.addEventListener("keyup", idCheck);
+
 pwCheckInput.addEventListener("keyup", pwCheck); // pw 똑같이 썼는지 체크
+
 pwInput.addEventListener("keydown", resetFunc); // pw 수정시 비밀번호 확인, 확인문구 초기화
 pwInput.addEventListener("keyup", pwLengthCheck);
+
 signUpForm.addEventListener("submit", signUp);
